@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PointCraft Play</title>
+<style>
+body {
+background:#111;
+color:white;
+text-align:center;
+font-family:Arial;
+}
+button {
+padding:15px;
+margin:10px;
+font-size:18px;
+border:none;
+background:gold;
+color:black;
+}
+</style>
+</head>
+<body>
+
+<h1>🎮 PointCraft Play</h1>
+
+<h2>Coins: <span id="coins">0</span></h2>
+<h3>Daily Visits: <span id="visits">0</span></h3>
+
+<button onclick="daily()">Daily Visit</button>
+<button onclick="play()">Play Game</button>
+<button onclick="withdraw()">Withdraw</button>
+
+<script>
+let coins = 0;
+let visits = 0;
+
+function daily(){
+visits++;
+coins += 50;
+update();
+alert("Daily reward added!");
+}
+
+function play(){
+coins += 20;
+update();
+alert("You earned coins!");
+}
+
+function withdraw(){
+if(visits >= 10){
+alert("Withdraw unlocked!");
+}else{
+alert("Visit 10 days to unlock withdraw!");
+}
+}
+
+function update(){
+document.getElementById("coins").innerText = coins;
+document.getElementById("visits").innerText = visits;
+}
+</script>
+
+</body>
+  </html>
